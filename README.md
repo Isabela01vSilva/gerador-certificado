@@ -1,59 +1,25 @@
-# GeradorCertificado
+# 🚀 Rocketseat -  Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+**Projetos e estudos de Angular do curso Rocketseat.**  
+**Curso:** [Angular - Curso Introdutório](https://app.rocketseat.com.br/journey/angular-curso-introdutorio/contents)  
 
-## Development server
+---
 
-To start a local development server, run:
+## 🎯 Sobre o curso
 
-```bash
-ng serve
-```
+- **Nível:** 1  
+- **Carga horária total:** (6h 50min)  
+- **Objetivo:** Explorar conceitos fundamentais do Angular, entender a estrutura completa de um projeto, criar componentes, rotas, formulários dinâmicos, serviços e desenvolver um projeto prático de gerador de certificados.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📚 Módulos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Fundamentos do Angular** (23 aulas, 3h 18min)  
+  Conceitos básicos, estrutura do projeto, criação de componentes e início do projeto prático.
 
-```bash
-ng generate component component-name
-```
+- **Interatividade e Renderização** (10 aulas, 2h 01min)  
+  Rotas, formulários, validações e serviços para manipular dados.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Fluxo de Controle e Geração de Certificados** (5 aulas, 31min)  
+  Finalização do projeto, download de certificados e deploy na Netlify.
