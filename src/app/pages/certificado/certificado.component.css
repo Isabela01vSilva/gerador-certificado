@@ -1,8 +1,10 @@
-.menu-certificado {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.menu-certificado{
   max-width: 800px;
 }
 
-.btn-voltar{
+.btn-voltar {
   gap: 6px;
 }
 
@@ -24,7 +26,7 @@
   position: relative;
   margin-top: 32px;
   background-image: url('../../../../public/certificate/certificate_bg.png');
-  width: 800;
+  width: 800px;
   height: 550px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -61,7 +63,7 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 160%;
-  letter-spacing: 10%;
+  letter-spacing: 2.4px;
   color: #1A2856;
 }
 
@@ -76,16 +78,13 @@
 }
 
 .nome-aluno {
+  font-family: "Dancing Script";
   font-weight: 700;
-  font-size: 55px;
+  font-size: 52px;
   line-height: 80px;
   letter-spacing: 0;
   text-align: center;
   color: #3B5AC2;
-}
-
-.lista-atividade {
-  width: 413.7px;
 }
 
 .lista-atividade-titulo{
@@ -95,12 +94,13 @@
   letter-spacing: 0;
   text-align: center;
   color: #121621;
-  margin-bottom: 8px  !important;
+  margin-bottom: 8px !important;
 }
 
 .lista-atividade{
+  width: 413.7px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 160%;
   letter-spacing: 0;
   text-align: center;

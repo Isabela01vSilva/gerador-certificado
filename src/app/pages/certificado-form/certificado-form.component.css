@@ -93,6 +93,10 @@ label {
   vertical-align: middle;
 }
 
+.custom-input-group{
+  margin-bottom: 20px !important;
+}
+
 .custom-input-group:has(.error-message)>label {
   color: #D71D1D;
 }
