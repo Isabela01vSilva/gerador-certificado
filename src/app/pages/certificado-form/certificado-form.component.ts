@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { CertificadoService } from './../../_services/certificado.service';
+import { Component, ViewChild } from '@angular/core';
 import { SecondaryButtonComponent } from "../../_components/secondary-button/secondary-button.component";
 import { PrimaryButtonComponent } from "../../_components/primary-button/primary-button.component";
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Certificado } from '../../interface/certificado';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-certificado-form',
@@ -13,9 +15,15 @@ import { Certificado } from '../../interface/certificado';
 })
 export class CertificadoFormComponent {
 
+  constructor(private CertificadoService: CertificadoService) { }
+
+  @ViewChild('form') form!: NgForm;
+
   certificado: Certificado = {
+    id: '',
     atividades: [],
-    nome: ''
+    nome: '',
+    dataEmissao: ''
   };
 
   atividade: string = '';
@@ -29,6 +37,9 @@ export class CertificadoFormComponent {
   }
 
   adicionarAtividade(){
+    if(this.atividade.length == 0){
+      return;
+    }
     this.certificado.atividades.push(this.atividade);
     this.atividade = '';
   }
@@ -41,5 +52,30 @@ export class CertificadoFormComponent {
     if(!this.formValido()){
       return;
     }
+    this.certificado.dataEmissao = this.dataAtual();
+    this.certificado.id = uuidv4();
+    this.CertificadoService.adicionarCertificado(this.certificado);
+
+    this.certificado = this.estadoInicialCertificado();
+    this.form.resetForm();
+  }
+  dataAtual(){
+    const dataAtual = new Date();
+
+    const dia = String(dataAtual.getDate()).padStart(2, '0');
+    const mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+    const ano = dataAtual.getFullYear();
+
+    const dataFormatada = `${dia}/${mes}/${ano}`
+    return dataFormatada;
+  }
+
+  estadoInicialCertificado(): Certificado{
+    return {
+      id: '',
+      atividades: [],
+      nome: '',
+      dataEmissao: ''
+    };
   }
 }

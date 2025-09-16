@@ -5,10 +5,9 @@
       Preencha os dados para gerar um novo certificado
     </p>
   </div>
-
   <div class="custom-card w-100">
-    <h3>Novo certificado</h3>
-    <div class="mb-3 custom-input-group">
+    <h2 class="card-title">Novo certificado</h2>
+    <div class="custom-input-group">
       <label
         [ngClass]="{ 'text-danger-label': campoInvalido(nomeRef) }"
         for="nome"
@@ -19,32 +18,30 @@
         [(ngModel)]="certificado.nome"
         #nomeRef="ngModel"
         name="nome"
-        max-length="150"
+        maxlength="150"
         required
         id="nome"
         type="text"
         class="form-control custom-input"
         placeholder="Nome do aluno"
       />
-
-      @if (campoInvalido(nomeRef)) {
+      @if(campoInvalido(nomeRef) ) {
       <div class="error-message d-flex align-items-center">
         <i class="ph ph-warning-circle"></i>
-        <p class="m-0">O nome do aluno é obrigatorio</p>
+        <p class="m-0">O nome do aluno é obrigatório</p>
       </div>
       }
     </div>
-    <!-- <span>{{ nome }}</span> -->
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
         <label for="atividade" class="form-label">Atividade</label>
         <input
-          [(ngModel)]="certificado.atividades"
-          id="atividade"
-          name="atividade"
+          [(ngModel)]="atividade"
           #atividadeRef="ngModel"
+          name="atividade"
           maxlength="50"
           required
+          id="atividade"
           type="text"
           class="form-control custom-input"
           placeholder="Atividade exercida"
@@ -52,13 +49,13 @@
       </div>
       <app-secondary-button
         (click)="adicionarAtividade()"
-        [disabled]="atividade.length == 0"
+        [disabled]="!atividade || atividade.length == 0"
         textoBotao="Adicionar"
         phClass="ph ph-plus"
       ></app-secondary-button>
     </div>
     <div class="atividade-group">
-      <label class="form-label">Lista de Atividade</label>
+      <label class="form-label">Lista de atividades</label>
       <div class="item-list w-100">
         @for (atividade of certificado.atividades; track $index) {
         <div class="item">
@@ -67,7 +64,7 @@
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
-        @if ($index + 1 != certificado.atividades.length) {
+        @if ($index +1 != certificado.atividades.length) {
         <hr />
         } }
       </div>
